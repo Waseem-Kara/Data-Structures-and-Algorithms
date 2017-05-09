@@ -1,48 +1,34 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Title:     Binary Search Algorithm
 % Author:    Waseem Kara
-% Rev. Date: 16-03-17
+% Rev. Date: 25-04-2017
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function [numComparisons, currentIndex] = binarySearch(V, target)
       
             low = 0; 
             high = length(V);             
-            %get the value of the array middle index
+            %Find middle of array using high and low
             middle = ceil((low + high) / 2);
+            %fail tocken
             currentIndex = -1;
+            %reset comparisons to null
             numComparisons = 0;      
                             
             while low <= high & isequal(currentIndex,-1)
                
-                %increment the number of comparisons by 1
                 numComparisons = numComparisons + 1; 
                 
-                %if target is equal to middle index value
+                %Check search target is in middle of V
                 if (target == V(middle))
-                    
-                    %assign the value to the currentIndex
                     currentIndex = middle;
-                    
-                else
-                
-                %if target is less than the middle index value
-                if (target < V(middle))
-                    
-                    %assign the value minus one to the high
+                else                
+                %find new high low middle values
+                if (target < V(middle))        
                     high = middle - 1; 
-                    
-                else 
-                     %assign the value plus one to the low
-                    low = middle + 1;
-                    
+                else  
+                    low = middle + 1; 
                 end
-
-                %get new middle value
                 middle = ceil((low + high) / 2);    
-                
-                end  
-                
-            end          
-
-end
+                end                  
+            end   

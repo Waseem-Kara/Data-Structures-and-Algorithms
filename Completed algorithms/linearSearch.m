@@ -18,5 +18,4 @@ function [numComparisons, currentIndex] = linearSearch(V, target)
     if(V(currentIndex)~=target)
         currentIndex = -1;
     end
-    
 end

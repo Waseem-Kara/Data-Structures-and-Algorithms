@@ -7,8 +7,9 @@
 clear all;close all;clc;
 
 maxArraySize = 1024;
+
 %Maximum number of searches to perform
-maxComparisons = 20;
+maxComparisons = 10;
 
 for N = 1:maxArraySize    
     
@@ -41,8 +42,8 @@ legend('min','mean','max');
 % Plot Expected
 
 plot([1:maxArraySize], linspace(1,1,maxArraySize), 'k:');
-plot([1:maxArraySize], linspace(1,N/2,maxArraySize), 'k:');
 plot([1:maxArraySize], linspace(1,N,maxArraySize), 'k:');
+plot([1:maxArraySize], linspace(1,N*N,maxArraySize), 'k:');
 
 % Annotate Chart
 
