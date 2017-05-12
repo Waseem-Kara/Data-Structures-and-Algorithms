@@ -4,6 +4,31 @@
 % Rev. Date: 16-03-17
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% function comparisons = jumpSearch(V,target)
+% size = length(V);
+% jump = round(sqrt(size));
+% currentIndex = 0;
+%     while (V(jump)< target)
+%         currentIndex = jump;
+%         jump= jump +round(sqrt(size));
+%         if (jump > size)
+%             break
+%         end
+%     while (V(currentIndex) < target)
+%        currentIndex=currentIndex+1;
+%        if currentIndex == jump 
+%             break
+%        end
+%        if V(currentIndex) == target
+%        break
+%        end
+%     end
+%     end
+%     comparisons=currentIndex;
+% end
+
+
+
 function [numComparisons, currentIndex] = jumpSearch(V, target)
       
         size = length(V);
@@ -24,6 +49,7 @@ function [numComparisons, currentIndex] = jumpSearch(V, target)
             %fail token
             if (initialIndex >= size)
                 currentIndex = -1;
+                return
             end
         end 
         
